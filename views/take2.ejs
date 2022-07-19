@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MGSD Snack Money</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <style>
+        .row:nth-of-type(odd) {
+            background-color:#ccc;
+        }
+    </style>
+
+</head>
+
+<div class="topnav">
+    <a href="/profile">Welcome <%= user[0].firstName%> <%= user[0].lastName%>!</a>
+    <a href="/logout">Logout</a>
+    <a href="/addStudent">Add Student</a>
+    <a class="active" href="/take2">Deduct $2</a>
+    <a href="/previous">Previous Week</a>
+    <a href="/forward">Next Week</a>
+    <a href="/emailNeg">Email Negatives</a>
+    <a href="/report">Report</a>
+</div>
+
+<body>
+<br>
+<h1 class="center">Are you sure you would like deduct $2 from students?</h1>
+<br>
+<div class="center"><a target="_self" href="/yesTake2" target="_blank">Yes</a></div>
+</body>
+</html>

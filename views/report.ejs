@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MGSD Snack Money</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <style>
+        .row:nth-of-type(odd) {
+            background-color:#ccc;
+        }
+    </style>
+</head>
+<body>
+<br>
+<% students.forEach(entry => { %>
+<h1 class="center"><%=entry.firstName%> <%=entry.lastName%></h1>
+<div class="center" style="width: 100%; display: table;">
+    <div style="display: table-row">
+        <div style="width: 1000px; display: table-cell;">
+            <div class="center">
+                Parent Email: <%=entry.email%>
+                <hr class="solid">
+                Balance: $<%=entry.balance%>
+                <hr class="solid">
+                Paid in full?: <%=entry.paidInFull%>
+                <hr class="solid">
+                Deposits:
+                <%=entry.deposits%>
+                <hr class="solid">
+                Deductions:
+                <%=entry.deductions%>
+                <hr class="solid">
+                Notes:
+                <%=entry.notes%>
+                <hr class="solid">
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<%}) %>
+</body>
+</html>

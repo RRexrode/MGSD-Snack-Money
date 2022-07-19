@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MGSD Snack Money</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <style>
+        .row:nth-of-type(odd) {
+            background-color:#ccc;
+        }
+    </style>
+
+</head>
+<div class="center" style="width: 100%; display: table;">
+    <div class="topnav">
+        <a class="active"  href="/profile">Welcome <%= user[0].firstName%> <%= user[0].lastName%>!</a>
+        <a href="/logout">Logout</a>
+        <a href="/addStudent">Add Student</a>
+        <a href="/take2">Deduct $2</a>
+        <a href="/previous">Previous Week</a>
+        <a href="/forward">Next Week</a>
+        <a href="/emailNeg">Email Negatives</a>
+        <a href="/report">Report</a>
+        <div class="center" style="display: table-cell;">
+            <a class="navbar-brand" style="max-width: 30%;">
+                <img src="logo-mooresville.png" class="img-fluid">
+            </a>
+        </div>
+    </div>
+</div>
+
+<body>
+<h1 class="center">Week: <%= week[user[0].week]%></h1>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="column">STUDENT NAME</div>
+        <div class="column">BALANCE</div>
+        <div class="column">HAVE THEY PAID IN FULL?</div>
+    </div>
+    <hr class="solid">
+    <% students.forEach(entry => { %>
+        <div class="row">
+            <div class="column"><%= entry.firstName%> <%= entry.lastName%></div>
+            <div class="column">$<%= entry.balance%></div>
+            <div class="column"><%= entry.paidInFull%></div>
+            <div class="column"><a target="_self"  href="/studentProfile/<%= entry.id%>" target="_blank">View Student</a></div>
+        </div>
+    <%}) %>
+</div>
+</body>
+</html>

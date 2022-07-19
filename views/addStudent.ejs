@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MGSD Snack Money</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <style>
+        .row:nth-of-type(odd) {
+            background-color:#ccc;
+        }
+    </style>
+
+</head>
+
+<div class="center" style="width: 100%; display: table;">
+    <div class="topnav">
+        <a href="/profile">Welcome <%= user[0].firstName%> <%= user[0].lastName%>!</a>
+        <a href="/logout">Logout</a>
+        <a class="active" href="/addStudent">Add Student</a>
+        <a href="/take2">Deduct $2</a>
+        <a href="/previous">Previous Week</a>
+        <a href="/forward">Next Week</a>
+        <a href="/emailNeg">Email Negatives</a>
+        <a href="/report">Report</a>
+        <div class="center" style="display: table-cell;">
+            <a class="navbar-brand" style="max-width: 30%;">
+                <img src="logo-mooresville.png" class="img-fluid">
+            </a>
+        </div>
+    </div>
+</div>
+
+<body>
+<br>
+<h1 class="center">Add Student</h1>
+<form action="/submitStudent" method="POST" class="center">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" name="firstName" type="text" aria-required="true">
+    <hr class="solid">
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" name="lastName" type="text" aria-required="true">
+    <hr class="solid">
+    <label for="email">Parent Email:</label>
+    <input id="email" name="email" type="text" aria-required="true">
+    <hr class="solid">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

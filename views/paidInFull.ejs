@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MGSD Snack Money</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <style>
+        .row:nth-of-type(odd) {
+            background-color:#ccc;
+        }
+    </style>
+
+</head>
+
+<div class="topnav">
+    <a class="active" href="/profile">Welcome <%= user[0].firstName%> <%= user[0].lastName%>!</a>
+    <a href="/logout">Logout</a>
+    <a href="/addStudent">Add Student</a>
+    <a href="/take2">Deduct $2</a>
+    <a href="/previous">Previous Week</a>
+    <a href="/forward">Next Week</a>
+    <a href="/emailNeg">Email Negatives</a>
+    <a href="/report">Report</a>
+</div>
+
+<body>
+<h1 class="center"><%=student[0].firstName%> <%=student[0].lastName%> Paid In Full?</h1>
+<form action="/submitPIF/<%=student[0].id%>" method="POST" class="center">
+    <select id="PIF" name="PIF" size="1" multipe>
+        <option value="Yes">Yes</option>
+        <option value ="No">No</option>
+    </select>
+    <hr class="solid">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

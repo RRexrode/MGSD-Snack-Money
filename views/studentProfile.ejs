@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MGSD Snack Money</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <style>
+        .row:nth-of-type(odd) {
+            background-color:#ccc;
+        }
+    </style>
+
+</head>
+
+<div class="topnav">
+    <a class="active" href="/profile">Welcome <%= user[0].firstName%> <%= user[0].lastName%>!</a>
+    <a href="/logout">Logout</a>
+    <a href="/addStudent">Add Student</a>
+    <a href="/take2">Deduct $2</a>
+    <a href="/previous">Previous Week</a>
+    <a href="/forward">Next Week</a>
+    <a href="/emailNeg">Email Negatives</a>
+    <a href="/report">Report</a>
+</div>
+
+<body>
+<br>
+<h1 class="center"><%=student[0].firstName%> <%=student[0].lastName%></h1>
+<div class="center" style="width: 100%; display: table;">
+    <div style="display: table-row">
+        <div style="width: 1000px; display: table-cell;">
+            <div class="center">
+                Parent Email: <%=student[0].email%>
+                <hr class="solid">
+                Balance: $<%=student[0].balance%>
+                <hr class="solid">
+                Paid in full?: <%=student[0].paidInFull%>
+                <hr class="solid">
+                Deposits:
+                <%=student[0].deposits%>
+                <hr class="solid">
+                Deductions:
+                <%=student[0].deductions%>
+                <hr class="solid">
+                Notes:
+                <%=student[0].notes%>
+                <hr class="solid">
+            </div>
+        </div>
+        <div style="display: table-cell;">
+            <div ><a target="_self" href="/addMoney/<%= student[0].id%>" target="_blank">Add Money</a></div>
+            <br>
+            <div ><a target="_self" href="/paidInFull/<%= student[0].id%>" target="_blank">Change Paid In Full</a></div>
+            <br>
+            <div><a target="_self" href="/email/<%= student[0].id%>" target="_blank">Email Parent</a></div>
+            <br>
+            <div><a target="_self" href="/addNotes/<%= student[0].id%>" target="_blank">Add Note</a></div>
+            <br>
+            <div><a target="_self" href="/delete/<%= student[0].id%>" target="_blank">Delete Student</a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

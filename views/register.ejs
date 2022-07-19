@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MGSD Snack Money</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+</head>
+
+<div class="topnav">
+    <a href="/">MGSD Snack Money</a>
+    <a href="/">Login</a>
+    <a class="active" href="/register">Register</a>
+    <a class="navbar-brand" href="#" style="max-width: 30%;">
+        <img src="logo-mooresville.png" class="img-fluid">
+    </a>
+
+</div>
+
+<body>
+<br>
+<h1 class="center">Register</h1>
+<form action="/submitUser" method="POST" class="center">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" name="firstName" type="text" aria-required="true">
+    <hr class="solid">
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" name="lastName" type="text" aria-required="true">
+    <hr class="solid">
+    <label for="email">Email:</label>
+    <input id="email" name="email" type="text" aria-required="true">
+    <hr class="solid">
+    <label for="password">Password:</label>
+    <input id="password" name="password" type="password" aria-required="true">
+    <hr class="solid">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
